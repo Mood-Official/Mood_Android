@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home">홈</string>
+    <string name="meet">내모임</string>
+    <string name="alarm">알림</string>
+    <string name="profile">프로필</string>
+</resources>
