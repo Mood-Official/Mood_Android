@@ -45,7 +45,7 @@ internal val TabBarHeight = 64.dp
 @Composable
 fun TabBar(
     modifier: Modifier = Modifier,
-    backgroundColor: Color = MoodTheme.textColor.white,
+    backgroundColor: Color = MoodTheme.color.white,
     windowInsets: WindowInsets = WindowInsets.systemBars.only(WindowInsetsSides.Horizontal + WindowInsetsSides.Bottom),
     content: @Composable RowScope.() -> Unit,
 ) {

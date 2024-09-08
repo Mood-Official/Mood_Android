@@ -1,6 +1,7 @@
 package com.android.mood.designsystem.foundation
 
 import androidx.compose.runtime.staticCompositionLocalOf
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 
 internal val LocalMoodColor = staticCompositionLocalOf { MoodColor() }
@@ -9,6 +10,7 @@ class MoodColor {
     // Common
     internal val white = Color(0xFFFFFFFF)
     internal val black = Color(0xFF000000)
+    internal val transparent = Color(0x00FFFFFF)
 
     // Primary
     internal val primary025 = Color(0xFFEDF4FF)
@@ -21,6 +23,7 @@ class MoodColor {
     internal val primary700 = Color(0xFF0431AE)
     internal val primary800 = Color(0xFF051A75)
     internal val primary900 = Color(0xFF041143)
+    internal val primaryNormal = Color(0xFF0066FF)
 
 
     // Secondary
@@ -46,4 +49,10 @@ class MoodColor {
     internal val gray850 = Color(0xFF333B45)
     internal val gray900 = Color(0xFF15191E)
     internal val gray950 = Color(0xFF0A0D0F)
+
+    val gradient: Brush = kotlin.run {
+        val start = Color(0xFFFB4760)
+        val end = Color(0xFFFE1EA4)
+        Brush.horizontalGradient(colors = listOf(start, end))
+    }
 }

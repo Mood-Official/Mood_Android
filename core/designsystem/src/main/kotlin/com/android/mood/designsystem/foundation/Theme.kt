@@ -5,7 +5,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.ReadOnlyComposable
 
 object MoodTheme {
-    val textColor: MoodColor
+    val color: MoodColor
         @Composable
         @ReadOnlyComposable
         get() = LocalMoodColor.current
@@ -18,12 +18,12 @@ object MoodTheme {
 
 @Composable
 fun MoodTheme(
-    textColor: MoodColor = MoodTheme.textColor,
+    color: MoodColor = MoodTheme.color,
     typography: MoodTypography = MoodTheme.typography,
     content: @Composable () -> Unit,
 ) {
     CompositionLocalProvider(
-        LocalMoodColor provides textColor,
+        LocalMoodColor provides color,
         LocalMoodTypography provides typography,
         content = content
     )
