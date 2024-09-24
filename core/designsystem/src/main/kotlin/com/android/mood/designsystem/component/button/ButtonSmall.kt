@@ -12,7 +12,7 @@ import net.deali.designsystem.internal.button.ButtonStyle
 import net.deali.designsystem.internal.button.CoreButton
 
 @Composable
-fun btnSolidSmall(
+fun BtnSolidSmall(
     onClick: () -> Unit,
     text: String,
     modifier: Modifier = Modifier,
@@ -45,7 +45,7 @@ fun btnSolidSmall(
 }
 
 @Composable
-fun btnPrimaryOutlineSmall(
+fun BtnPrimaryOutlineSmall(
     onClick: () -> Unit,
     text: String,
     modifier: Modifier = Modifier,
@@ -80,7 +80,7 @@ fun btnPrimaryOutlineSmall(
 }
 
 @Composable
-fun btnSecondaryOutlineSmall(
+fun BtnSecondaryOutlineSmall(
     onClick: () -> Unit,
     text: String,
     modifier: Modifier = Modifier,
@@ -115,7 +115,7 @@ fun btnSecondaryOutlineSmall(
 }
 
 @Composable
-fun btnAssistiveSmall(
+fun BtnAssistiveSmall(
     onClick: () -> Unit,
     text: String,
     modifier: Modifier = Modifier,
@@ -150,7 +150,7 @@ fun btnAssistiveSmall(
 }
 
 @Composable
-fun btnPrimaryTextSmall(
+fun BtnPrimaryTextSmall(
     onClick: () -> Unit,
     text: String,
     modifier: Modifier = Modifier,
@@ -183,7 +183,7 @@ fun btnPrimaryTextSmall(
 }
 
 @Composable
-fun btnAssistiveTextSmall(
+fun BtnAssistiveTextSmall(
     onClick: () -> Unit,
     text: String,
     modifier: Modifier = Modifier,

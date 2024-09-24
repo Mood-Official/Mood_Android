@@ -12,7 +12,7 @@ import net.deali.designsystem.internal.button.ButtonStyle
 import net.deali.designsystem.internal.button.CoreButton
 
 @Composable
-fun btnSolidMedium(
+fun BtnSolidMedium(
     onClick: () -> Unit,
     text: String,
     modifier: Modifier = Modifier,
@@ -45,7 +45,7 @@ fun btnSolidMedium(
 }
 
 @Composable
-fun btnPrimaryOutlineMedium(
+fun BtnPrimaryOutlineMedium(
     onClick: () -> Unit,
     text: String,
     modifier: Modifier = Modifier,
@@ -80,7 +80,7 @@ fun btnPrimaryOutlineMedium(
 }
 
 @Composable
-fun btnSecondaryOutlineMedium(
+fun BtnSecondaryOutlineMedium(
     onClick: () -> Unit,
     text: String,
     modifier: Modifier = Modifier,
@@ -115,7 +115,7 @@ fun btnSecondaryOutlineMedium(
 }
 
 @Composable
-fun btnAssistiveMedium(
+fun BtnAssistiveMedium(
     onClick: () -> Unit,
     text: String,
     modifier: Modifier = Modifier,
@@ -151,7 +151,7 @@ fun btnAssistiveMedium(
 
 
 @Composable
-fun btnPrimaryTextMedium(
+fun BtnPrimaryTextMedium(
     onClick: () -> Unit,
     text: String,
     modifier: Modifier = Modifier,
@@ -184,7 +184,7 @@ fun btnPrimaryTextMedium(
 }
 
 @Composable
-fun btnAssistiveTextMedium(
+fun BtnAssistiveTextMedium(
     onClick: () -> Unit,
     text: String,
     modifier: Modifier = Modifier,

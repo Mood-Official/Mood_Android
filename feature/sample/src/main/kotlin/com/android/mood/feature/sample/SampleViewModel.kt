@@ -1,5 +1,6 @@
 package com.android.mood.feature.sample
 
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import com.android.mood.common.android.base.BaseViewModel
 import com.android.mood.domain.usecase.SampleUseCase
@@ -12,8 +13,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SampleViewModel @Inject constructor(
+    savedStateHandle: SavedStateHandle,
     private val sampleUseCase: SampleUseCase,
-) : BaseViewModel<SampleState, SampleSideEffect, SampleIntent>(SampleState()) {
+) : BaseViewModel<SampleState, SampleSideEffect, SampleIntent>(savedStateHandle) {
     override suspend fun handleIntent(intent: SampleIntent) {
         when (intent) {
             is SampleIntent.ClickGetImagesButton -> getImages()
@@ -35,5 +37,12 @@ class SampleViewModel @Inject constructor(
             }
             updateLoading(false)
         }
+    }
+
+    override fun createInitialState(savedStateHandle: SavedStateHandle): SampleState {
+        return SampleState()
+    }
+
+    override fun handleClientException(throwable: Throwable) {
     }
 }
