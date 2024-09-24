@@ -4,13 +4,11 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsFocusedAsState
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.input.VisualTransformation
@@ -21,7 +19,7 @@ import com.android.mood.designsystem.component.textinput.internal.MoodTextFieldD
 import com.android.mood.designsystem.component.textinput.internal.MoodTextFieldState
 
 /**
- * 신상마켓 디자인시스템 [TextInput] 컴포넌트.
+ * 디자인시스템 [TextInput] 컴포넌트.
  *
  * @param value 입력 된 텍스트.
  * @param onValueChange 입력 된 텍스트가 바뀔 때 호출되는 콜백.
@@ -73,10 +71,11 @@ fun TextInput(
     innerTrailingContent: @Composable (() -> Unit)? = null,
     innerFixedContent: @Composable (() -> Unit)? = null,
     onPostRemoveIconClick: (() -> Unit)? = null,
+    shouldRemoveIcon: Boolean = true
 ) {
     val focused by interactionSource.collectIsFocusedAsState()
     val shouldRemoveIconVisible by rememberUpdatedState(
-        focused && value.isNotEmpty()
+        focused && value.isNotEmpty() && shouldRemoveIcon
     )
     val onRemoveIconClick: () -> Unit = remember {
         {
@@ -120,7 +119,7 @@ fun TextInput(
 }
 
 /**
- * 신상마켓 디자인시스템 [TextInput] 컴포넌트.
+ * 디자인시스템 [TextInput] 컴포넌트.
  *
  * @param value 입력 된 텍스트.
  * @param onValueChange 입력 된 텍스트가 바뀔 때 호출되는 콜백.
@@ -169,10 +168,11 @@ fun TextInput(
     innerTrailingContent: @Composable (() -> Unit)? = null,
     innerFixedContent: @Composable (() -> Unit)? = null,
     onPostRemoveIconClick: (() -> Unit)? = null,
+    shouldRemoveIcon: Boolean = true
 ) {
     val focused by interactionSource.collectIsFocusedAsState()
     val shouldRemoveIconVisible by rememberUpdatedState(
-        focused && value.text.isNotEmpty()
+        focused && value.text.isNotEmpty() && shouldRemoveIcon
     )
     val onRemoveIconClick: () -> Unit = remember {
         {
