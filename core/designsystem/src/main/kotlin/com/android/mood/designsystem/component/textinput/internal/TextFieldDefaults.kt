@@ -17,7 +17,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.android.mood.core.designsystem.R
-import com.android.mood.designsystem.component.button.btnPrimaryTextMedium
+import com.android.mood.designsystem.component.button.BtnPrimaryTextMedium
 import com.android.mood.designsystem.component.icon.Icon16
 import com.android.mood.designsystem.component.spacer.HorizontalSpacer
 import com.android.mood.designsystem.foundation.MoodTheme
@@ -59,7 +59,7 @@ internal object MoodTextFieldDefaults {
             disabledTextColor = MoodTheme.color.gray400,
             readOnlyTextColor = MoodTheme.color.gray900,
             placeholderTextColor = MoodTheme.color.gray400,
-            labelTextColor = MoodTheme.color.primary500,
+            labelTextColor = MoodTheme.color.gray600,
             helperTextColor = MoodTheme.color.rubyRed,
             errorHelperTextColor = MoodTheme.color.rubyRed,
         )
@@ -87,7 +87,7 @@ internal object MoodTextFieldDefaults {
     ) {
         Row(modifier = modifier) {
             HorizontalSpacer(width = 8.dp)
-            btnPrimaryTextMedium(
+            BtnPrimaryTextMedium(
                 text = text,
                 enabled = enabled,
                 onClick = onClick,
