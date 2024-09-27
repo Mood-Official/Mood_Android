@@ -2,8 +2,6 @@ package com.android.mood.onboard.login.screen.signupagree
 
 import androidx.lifecycle.SavedStateHandle
 import com.android.mood.common.android.base.BaseViewModel
-import com.android.mood.domain.usecase.validation.ValidateNameUseCase
-import com.android.mood.domain.usecase.validation.ValidateNickNameUseCase
 import com.android.mood.onboard.login.screen.signupagree.state.AgreeIntent
 import com.android.mood.onboard.login.screen.signupagree.state.AgreeSideEffect
 import com.android.mood.onboard.login.screen.signupagree.state.AgreeUiState
@@ -13,8 +11,6 @@ import javax.inject.Inject
 @HiltViewModel
 class AgreeViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
-    private val validateNicknameUseCase: ValidateNickNameUseCase,
-    private val validateNameUseCase: ValidateNameUseCase,
 ) : BaseViewModel<AgreeUiState, AgreeSideEffect, AgreeIntent>(savedStateHandle) {
 
     override fun createInitialState(savedStateHandle: SavedStateHandle): AgreeUiState =

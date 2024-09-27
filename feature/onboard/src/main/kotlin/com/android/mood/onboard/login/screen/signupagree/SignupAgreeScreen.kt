@@ -32,7 +32,7 @@ fun SignupAgreeScreen(state: AgreeUiState) {
 @Preview
 fun SignupAgreeScreenImpl(
     state: AgreeUiState = AgreeUiState.INITIAL_STATE,
-    toggleAgreeItem: (Boolean, Boolean, Boolean, Boolean, Boolean) -> Unit = { _, _, _, _, _ -> }
+    toggleAgreeItem: (isAllAgree: Boolean, age: Boolean, service: Boolean, privacy: Boolean, marketing: Boolean) -> Unit = { _, _, _, _, _ -> }
 ) {
     Column(
         modifier = Modifier
@@ -42,16 +42,35 @@ fun SignupAgreeScreenImpl(
     ) {
         MoodText(text = "서비스 이용 약관에\n동의해주세요", style = MoodTheme.typography.headline.headline7.bold)
         VerticalSpacer(height = 32.dp)
-        CheckCircle(checked = state.isAllAgree, text = "모두 동의", onCheck = {})
+        CheckCircle(checked = state.isAllAgree(), text = "모두 동의", onCheck = {
+            if (state.isAllAgree) toggleAgreeItem(false, false, false, false, false)
+            else toggleAgreeItem(true, true, true, true, true)
+        })
         VerticalSpacer(height = 16.dp)
         HorizontalDivider(color = MoodTheme.color.gray100)
         VerticalSpacer(height = 16.dp)
-        CheckCircle(checked = false, text = "(필수) 만 14세 이상입니다.", onCheck = {})
+        CheckCircle(checked = state.age, text = "(필수) 만 14세 이상입니다.", onCheck = {
+            toggleAgreeItem(
+                state.isAllAgree,
+                !state.age,
+                state.service,
+                state.privacy,
+                state.marketing
+            )
+        })
         VerticalSpacer(height = 16.dp)
         Row(
             verticalAlignment = Alignment.CenterVertically
         ) {
-            CheckCircle(checked = false, text = "(필수) 서비스 이용약관 동의", onCheck = {})
+            CheckCircle(checked = state.service, text = "(필수) 서비스 이용약관 동의", onCheck = {
+                toggleAgreeItem(
+                    state.isAllAgree,
+                    state.age,
+                    !state.service,
+                    state.privacy,
+                    state.marketing
+                )
+            })
             HorizontalSpacer(modifier = Modifier.weight(1f), width = 0.dp)
             MoodText(
                 text = "보기",
@@ -63,7 +82,15 @@ fun SignupAgreeScreenImpl(
         Row(
             verticalAlignment = Alignment.CenterVertically
         ) {
-            CheckCircle(checked = false, text = "(필수) 개인정보 수집 이용 동의", onCheck = {})
+            CheckCircle(checked = state.privacy, text = "(필수) 개인정보 수집 이용 동의", onCheck = {
+                toggleAgreeItem(
+                    state.isAllAgree,
+                    state.age,
+                    state.service,
+                    !state.privacy,
+                    state.marketing
+                )
+            })
             HorizontalSpacer(modifier = Modifier.weight(1f), width = 0.dp)
             MoodText(
                 text = "보기",
@@ -75,7 +102,15 @@ fun SignupAgreeScreenImpl(
         Row(
             verticalAlignment = Alignment.CenterVertically
         ) {
-            CheckCircle(checked = false, text = "(선택) 마케팅 개인정보 제 3자 제공 동의", onCheck = {})
+            CheckCircle(checked = state.marketing, text = "(선택) 마케팅 개인정보 제 3자 제공 동의", onCheck = {
+                toggleAgreeItem(
+                    state.isAllAgree,
+                    state.age,
+                    state.service,
+                    state.privacy,
+                    !state.marketing
+                )
+            })
             HorizontalSpacer(modifier = Modifier.weight(1f), width = 0.dp)
             MoodText(
                 text = "보기",
