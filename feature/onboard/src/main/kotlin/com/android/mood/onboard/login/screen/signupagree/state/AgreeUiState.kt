@@ -10,7 +10,7 @@ data class AgreeUiState(
     val marketing: Boolean = false,
 ) : UiState {
 
-    fun isAllAgree(): Boolean = age && service && privacy && marketing
+    fun isAgreeAll(): Boolean = age && service && privacy && marketing
 
     companion object {
         val INITIAL_STATE = AgreeUiState(
