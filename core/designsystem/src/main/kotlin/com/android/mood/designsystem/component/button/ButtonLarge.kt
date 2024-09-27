@@ -7,9 +7,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import com.android.mood.designsystem.component.button.internal.ButtonDefaults
 import com.android.mood.designsystem.foundation.MoodTheme
-import net.deali.designsystem.internal.button.ButtonSize
-import net.deali.designsystem.internal.button.ButtonStyle
-import net.deali.designsystem.internal.button.CoreButton
+import com.android.mood.designsystem.component.button.internal.ButtonSize
+import com.android.mood.designsystem.component.button.internal.ButtonStyle
+import com.android.mood.designsystem.component.button.internal.CoreButton
 
 @Composable
 fun BtnSolidLarge(

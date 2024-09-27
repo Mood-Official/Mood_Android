@@ -1,4 +1,4 @@
-package net.deali.designsystem.internal.button
+package com.android.mood.designsystem.component.button.internal
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
@@ -24,8 +24,6 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import com.android.mood.core.designsystem.R
-import com.android.mood.designsystem.component.button.internal.ButtonColors
-import com.android.mood.designsystem.component.button.internal.ButtonDefaults
 import com.android.mood.designsystem.component.icon.Icon16
 import com.android.mood.designsystem.component.icon.IconRotating
 import com.android.mood.designsystem.component.text.MoodText
