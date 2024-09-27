@@ -16,8 +16,6 @@ import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import com.android.mood.designsystem.foundation.MoodRadius
 import com.android.mood.designsystem.foundation.MoodTheme
-import net.deali.designsystem.internal.button.ButtonSize
-import net.deali.designsystem.internal.button.ButtonStyle
 
 internal object ButtonDefaults {
     @Composable

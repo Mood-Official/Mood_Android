@@ -1,4 +1,4 @@
-package net.deali.designsystem.internal.button
+package com.android.mood.designsystem.component.button.internal
 
 internal enum class ButtonStyle {
     Filled,
