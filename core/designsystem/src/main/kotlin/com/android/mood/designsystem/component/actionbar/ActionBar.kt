@@ -40,8 +40,8 @@ fun ActionBar(
                 Icon24(
                     iconRes = R.drawable.ic_arrow_left_thickness_1_5,
                     color = backButtonColor,
-
-                    )
+                    onClick = onBack,
+                )
                 MoodText(
                     text = title,
                     style = MoodTheme.typography.subtitle.subtitle3.bold,

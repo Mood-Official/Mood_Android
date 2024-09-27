@@ -11,10 +11,14 @@ fun NavController.navigateToAgree() = navigate(SIGNUP_AGREE_ROUTE)
 
 fun NavGraphBuilder.signupAgreeScreen(
     navigateToHome: () -> Unit = {},
+    navigateBack: () -> Unit = {},
 ) {
     composable(
         route = SIGNUP_AGREE_ROUTE,
     ) {
-        SignupAgreeRoute(navigateToHome = navigateToHome)
+        SignupAgreeRoute(
+            navigateToHome = navigateToHome,
+            navigateBack = navigateBack,
+        )
     }
 }

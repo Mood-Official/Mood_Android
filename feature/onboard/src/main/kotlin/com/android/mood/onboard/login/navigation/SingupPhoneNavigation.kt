@@ -11,10 +11,14 @@ fun NavController.navigateToPhone() = navigate(SIGNUP_PHONE_ROUTE)
 
 fun NavGraphBuilder.signupPhoneScreen(
     navigateToAgree: () -> Unit,
+    navigateBack: () -> Unit,
 ) {
     composable(
         route = SIGNUP_PHONE_ROUTE,
     ) {
-        SignupPhoneRoute(navigateToAgree = navigateToAgree)
+        SignupPhoneRoute(
+            navigateToAgree = navigateToAgree,
+            navigateBack = navigateBack,
+        )
     }
 }

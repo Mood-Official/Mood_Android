@@ -32,9 +32,21 @@ fun OnboardNavHost(
         exitTransition = { ExitTransition.None }
     ) {
         loginScreen(navigateToPassword = { navController.navigateToPassword() })
-        signupPasswordScreen(navigateToNickname = { navController.navigateToNickname() })
-        signupNicknameScreen(navigateToPhone = { navController.navigateToPhone() })
-        signupPhoneScreen(navigateToAgree = { navController.navigateToAgree() })
-        signupAgreeScreen(navigateToHome = navigateToHome)
+        signupPasswordScreen(
+            navigateToNickname = { navController.navigateToNickname() },
+            navigateBack = { navController.popBackStack() }
+        )
+        signupNicknameScreen(
+            navigateToPhone = { navController.navigateToPhone() },
+            navigateBack = { navController.popBackStack() }
+        )
+        signupPhoneScreen(
+            navigateToAgree = { navController.navigateToAgree() },
+            navigateBack = { navController.popBackStack() }
+        )
+        signupAgreeScreen(
+            navigateToHome = navigateToHome,
+            navigateBack = { navController.popBackStack() }
+        )
     }
 }

@@ -12,12 +12,14 @@ fun NavController.navigateToNickname() = navigate(SIGNUP_NICKNAME_ROUTE)
 
 fun NavGraphBuilder.signupNicknameScreen(
     navigateToPhone: () -> Unit,
+    navigateBack: () -> Unit,
 ) {
     composable(
         route = SIGNUP_NICKNAME_ROUTE,
     ) {
         SignupNicknameRoute(
-            navigateToPhone = navigateToPhone
+            navigateToPhone = navigateToPhone,
+            navigateBack = navigateBack
         )
     }
 }

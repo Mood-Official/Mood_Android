@@ -11,12 +11,14 @@ fun NavController.navigateToPassword() = navigate(SIGNUP_PASSWORD_ROUTE)
 
 fun NavGraphBuilder.signupPasswordScreen(
     navigateToNickname: () -> Unit,
+    navigateBack: () -> Unit,
 ) {
     composable(
         route = SIGNUP_PASSWORD_ROUTE,
     ) {
         SignupPasswordRoute(
-            navigateToNickname = navigateToNickname
+            navigateToNickname = navigateToNickname,
+            navigateBack = navigateBack
         )
     }
 }
