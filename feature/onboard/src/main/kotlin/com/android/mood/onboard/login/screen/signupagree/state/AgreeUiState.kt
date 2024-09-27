@@ -9,6 +9,9 @@ data class AgreeUiState(
     val privacy: Boolean = false,
     val marketing: Boolean = false,
 ) : UiState {
+
+    fun isAllAgree(): Boolean = age && service && privacy && marketing
+
     companion object {
         val INITIAL_STATE = AgreeUiState(
             isAllAgree = false,

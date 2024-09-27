@@ -19,7 +19,7 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.android.mood.core.designsystem.R
-import com.android.mood.designsystem.component.icon.Icon24
+import com.android.mood.designsystem.component.icons.Icon24
 import com.android.mood.designsystem.component.text.MoodText
 import com.android.mood.designsystem.foundation.MoodTheme
 
