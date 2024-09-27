@@ -4,7 +4,6 @@ import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExitTransition
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.android.mood.onboard.login.navigation.LOGIN_ROUTE
@@ -23,6 +22,7 @@ fun OnboardNavHost(
     modifier: Modifier = Modifier,
     startDestination: String = LOGIN_ROUTE,
     navController: NavHostController,
+    navigateToHome: () -> Unit,
 ) {
     NavHost(
         modifier = modifier,
@@ -35,6 +35,6 @@ fun OnboardNavHost(
         signupPasswordScreen(navigateToNickname = { navController.navigateToNickname() })
         signupNicknameScreen(navigateToPhone = { navController.navigateToPhone() })
         signupPhoneScreen(navigateToAgree = { navController.navigateToAgree() })
-        signupAgreeScreen()
+        signupAgreeScreen(navigateToHome = navigateToHome)
     }
 }

@@ -9,10 +9,12 @@ const val SIGNUP_AGREE_ROUTE = "signup_agree"
 
 fun NavController.navigateToAgree() = navigate(SIGNUP_AGREE_ROUTE)
 
-fun NavGraphBuilder.signupAgreeScreen() {
+fun NavGraphBuilder.signupAgreeScreen(
+    navigateToHome: () -> Unit = {},
+) {
     composable(
         route = SIGNUP_AGREE_ROUTE,
     ) {
-        SignupAgreeRoute()
+        SignupAgreeRoute(navigateToHome = navigateToHome)
     }
 }
