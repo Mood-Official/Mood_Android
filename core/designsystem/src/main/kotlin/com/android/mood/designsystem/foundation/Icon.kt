@@ -2,19 +2,22 @@ package com.android.mood.designsystem.foundation
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
@@ -43,6 +46,29 @@ fun Icon24(
         modifier = modifier,
         iconRes = iconRes,
         size = 16.dp,
+        color = color
+    )
+}
+
+@Composable
+fun Icon24(
+    @DrawableRes iconRes: Int,
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true,
+    color: Color = Color.Unspecified,
+    onClick: () -> Unit = {},
+    noRipple: Boolean = false,
+) {
+    Icon(
+        modifier = modifier.clickable(
+            onClick = onClick,
+            role = Role.Image,
+            enabled = enabled,
+            interactionSource = remember { MutableInteractionSource() },
+            indication = if (noRipple) null else rememberRipple(bounded = false, radius = 24.dp)
+        ),
+        iconRes = iconRes,
+        size = 24.dp,
         color = color
     )
 }
