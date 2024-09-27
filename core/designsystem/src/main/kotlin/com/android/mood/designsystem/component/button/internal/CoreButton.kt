@@ -24,8 +24,8 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import com.android.mood.core.designsystem.R
-import com.android.mood.designsystem.component.icon.Icon16
-import com.android.mood.designsystem.component.icon.IconRotating
+import com.android.mood.designsystem.component.icons.Icon16
+import com.android.mood.designsystem.component.icons.IconRotating
 import com.android.mood.designsystem.component.text.MoodText
 
 @Composable

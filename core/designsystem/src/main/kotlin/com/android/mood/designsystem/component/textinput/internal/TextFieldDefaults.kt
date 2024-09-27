@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.android.mood.core.designsystem.R
 import com.android.mood.designsystem.component.button.BtnPrimaryTextMedium
-import com.android.mood.designsystem.component.icon.Icon16
+import com.android.mood.designsystem.component.icons.Icon16
 import com.android.mood.designsystem.component.spacer.HorizontalSpacer
 import com.android.mood.designsystem.foundation.MoodTheme
 
