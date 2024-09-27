@@ -42,7 +42,7 @@ fun SignupAgreeScreenImpl(
     ) {
         MoodText(text = "서비스 이용 약관에\n동의해주세요", style = MoodTheme.typography.headline.headline7.bold)
         VerticalSpacer(height = 32.dp)
-        CheckCircle(checked = state.isAllAgree(), text = "모두 동의", onCheck = {
+        CheckCircle(checked = state.isAgreeAll(), text = "모두 동의", onCheck = {
             if (state.isAllAgree) toggleAgreeItem(false, false, false, false, false)
             else toggleAgreeItem(true, true, true, true, true)
         })
