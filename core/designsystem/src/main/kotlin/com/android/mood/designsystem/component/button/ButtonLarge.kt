@@ -12,7 +12,7 @@ import com.android.mood.designsystem.component.button.internal.ButtonStyle
 import com.android.mood.designsystem.component.button.internal.CoreButton
 
 @Composable
-fun btnSolidLarge(
+fun BtnSolidLarge(
     onClick: () -> Unit,
     text: String,
     modifier: Modifier = Modifier,
@@ -45,7 +45,7 @@ fun btnSolidLarge(
 }
 
 @Composable
-fun btnPrimaryOutlineLarge(
+fun BtnPrimaryOutlineLarge(
     onClick: () -> Unit,
     text: String,
     modifier: Modifier = Modifier,
@@ -80,7 +80,7 @@ fun btnPrimaryOutlineLarge(
 }
 
 @Composable
-fun btnSecondaryOutlineLarge(
+fun BtnSecondaryOutlineLarge(
     onClick: () -> Unit,
     text: String,
     modifier: Modifier = Modifier,
