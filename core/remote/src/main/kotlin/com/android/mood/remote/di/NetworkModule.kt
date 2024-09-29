@@ -107,7 +107,7 @@ internal class NetworkModule {
     }
 
     companion object {
-        const val BASE_URL = "https://picsum.photos/"
+        const val BASE_URL = "https://api.atreides.kr/"
         const val TIMEOUT_MILLIS = 5_000L
     }
 }

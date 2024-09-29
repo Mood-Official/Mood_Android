@@ -1,6 +1,6 @@
 package com.android.mood.remote.datasource
 
-interface UserDataSource {
-    suspend fun checkDuplicatedEmail(deviceId: String): Boolean
+interface UserRemoteDataSource {
+    suspend fun checkDuplicatedEmail(email: String): Boolean
     suspend fun checkDuplicatedNickname(): Boolean
 }
