@@ -47,7 +47,10 @@ class NicknameViewModel @Inject constructor(
             }
 
             is NickNameIntent.InputName -> reduce { copy(name = intent.name) }
-            is NickNameIntent.InputBirthday -> reduce { copy(birthday = intent.birthday) }
+            is NickNameIntent.InputBirthday -> reduce {
+                copy(birthday = intent.birthday, isBirthdaySuccess = true)
+            }
+
             is NickNameIntent.InputNickName -> reduce { copy(nickname = intent.nickname) }
         }
     }

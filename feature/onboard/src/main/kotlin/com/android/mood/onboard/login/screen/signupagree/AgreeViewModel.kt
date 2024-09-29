@@ -22,8 +22,14 @@ class AgreeViewModel @Inject constructor(
     override suspend fun handleIntent(intent: AgreeIntent) {
         when (intent) {
             AgreeIntent.ClickNextButton -> postSideEffect(AgreeSideEffect.Finish)
-            is AgreeIntent.ToggleAgreeItem -> {
-
+            is AgreeIntent.ToggleAgreeItem -> reduce {
+                copy(
+                    isAllAgree = intent.isAllAgree,
+                    age = intent.age,
+                    service = intent.service,
+                    privacy = intent.privacy,
+                    marketing = intent.marketing,
+                )
             }
         }
     }
