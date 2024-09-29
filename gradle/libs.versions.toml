@@ -52,6 +52,7 @@ androidxJunit = "1.1.5"
 espressoCore = "3.5.1"
 activity-ktx = "1.9.0"
 constraintlayout = "1.0.1"
+snapper = "0.3.0"
 
 
 [libraries]
@@ -121,6 +122,7 @@ espresso-core = { group = "androidx.test.espresso", name = "espresso-core", vers
 kotlin-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlin-serilization-json" }
 activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activity-ktx" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "constraintlayout" }
+snapper = { group = "dev.chrisbanes.snapper", name = "snapper", version.ref = "snapper" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

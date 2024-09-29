@@ -26,4 +26,5 @@ dependencies {
     implementation(libs.bundles.compose)
     implementation(libs.timber)
     implementation(libs.constraintlayout)
+    implementation(libs.snapper)
 }
