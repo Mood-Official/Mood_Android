@@ -1,6 +1,7 @@
 package com.android.mood.remote.di
 
 import com.android.mood.remote.api.SampleApi
+import com.android.mood.remote.api.UserApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,4 +17,8 @@ internal class ApiModule {
     @Provides
     @Singleton
     fun provideSampleApi(retrofit: Retrofit): SampleApi = retrofit.create()
+
+    @Provides
+    @Singleton
+    fun provideUserApi(retrofit: Retrofit): UserApi = retrofit.create()
 }

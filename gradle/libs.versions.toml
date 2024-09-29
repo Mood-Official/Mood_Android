@@ -25,6 +25,9 @@ dagger-hilt-navigation-compose = "1.2.0"
 compose-bom = "2024.04.01"
 room = "2.6.1"
 datastore = "1.1.0"
+protobuf = "0.9.4"
+protobuf-protoc = "3.18.0"
+java-lite = "3.18.0"
 
 # material + google
 material = "1.11.0"
@@ -82,7 +85,8 @@ splash-screen = { module = "androidx.core:core-splashscreen", version.ref = "spl
 room-core = {group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-compiler = {group = "androidx.room", name = "room-compiler", version.ref = "room" }
 datastore = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }
-
+java-lite = { module = "com.google.protobuf:protobuf-javalite", version.ref = "java-lite" }
+protoc = { module = "com.google.protobuf:protoc", version.ref = "protobuf-protoc" }
 
 # compose
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
@@ -134,7 +138,7 @@ dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "dagger-hil
 jetbrainsKotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-
+protobuf = { id = "com.google.protobuf", version.ref = "protobuf" }
 
 [bundles]
 lifecycle = ["lifecycle", "lifecycle-viewmodel"]
