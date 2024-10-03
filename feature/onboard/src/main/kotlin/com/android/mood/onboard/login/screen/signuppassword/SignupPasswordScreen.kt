@@ -90,7 +90,7 @@ fun SignupPasswordScreenImpl(
             modifier = Modifier
                 .fillMaxWidth()
                 .clip(MoodRadius.Radius12.shape),
-            enabled = state.isSuccess == true && state.isRepeatedPasswordSuccess == true
+            enabled = state.isSuccess == true && state.isRepeatedPasswordSuccess == true && (state.password == state.repeatedPassword)
         )
     }
 }

@@ -4,7 +4,6 @@ import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExitTransition
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.android.mood.onboard.login.navigation.LOGIN_ROUTE
@@ -23,6 +22,7 @@ fun OnboardNavHost(
     modifier: Modifier = Modifier,
     startDestination: String = LOGIN_ROUTE,
     navController: NavHostController,
+    navigateToHome: () -> Unit,
 ) {
     NavHost(
         modifier = modifier,
@@ -32,9 +32,21 @@ fun OnboardNavHost(
         exitTransition = { ExitTransition.None }
     ) {
         loginScreen(navigateToPassword = { navController.navigateToPassword() })
-        signupPasswordScreen(navigateToNickname = { navController.navigateToNickname() })
-        signupNicknameScreen(navigateToPhone = { navController.navigateToPhone() })
-        signupPhoneScreen(navigateToAgree = { navController.navigateToAgree() })
-        signupAgreeScreen()
+        signupPasswordScreen(
+            navigateToNickname = { navController.navigateToNickname() },
+            navigateBack = { navController.popBackStack() }
+        )
+        signupNicknameScreen(
+            navigateToPhone = { navController.navigateToPhone() },
+            navigateBack = { navController.popBackStack() }
+        )
+        signupPhoneScreen(
+            navigateToAgree = { navController.navigateToAgree() },
+            navigateBack = { navController.popBackStack() }
+        )
+        signupAgreeScreen(
+            navigateToHome = navigateToHome,
+            navigateBack = { navController.popBackStack() }
+        )
     }
 }

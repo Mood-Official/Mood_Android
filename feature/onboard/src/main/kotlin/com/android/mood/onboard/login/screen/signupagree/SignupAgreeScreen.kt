@@ -23,8 +23,12 @@ import com.android.mood.designsystem.foundation.MoodTheme
 import com.android.mood.onboard.login.screen.signupagree.state.AgreeUiState
 
 @Composable
-fun SignupAgreeScreen(state: AgreeUiState) {
-    SignupAgreeScreenImpl(state = state, toggleAgreeItem = { _, _, _, _, _ -> })
+fun SignupAgreeScreen(
+    state: AgreeUiState,
+    navigateToHome: () -> Unit = {},
+    toggleAgreeItem: (isAllAgree: Boolean, age: Boolean, service: Boolean, privacy: Boolean, marketing: Boolean) -> Unit = { _, _, _, _, _ -> }
+) {
+    SignupAgreeScreenImpl(state = state, navigateToHome = navigateToHome, toggleAgreeItem = toggleAgreeItem)
 }
 
 
@@ -32,6 +36,7 @@ fun SignupAgreeScreen(state: AgreeUiState) {
 @Preview
 fun SignupAgreeScreenImpl(
     state: AgreeUiState = AgreeUiState.INITIAL_STATE,
+    navigateToHome: () -> Unit = {},
     toggleAgreeItem: (isAllAgree: Boolean, age: Boolean, service: Boolean, privacy: Boolean, marketing: Boolean) -> Unit = { _, _, _, _, _ -> }
 ) {
     Column(
@@ -121,8 +126,9 @@ fun SignupAgreeScreenImpl(
 
         VerticalSpacer(modifier = Modifier.weight(1f), height = 0.dp)
         BtnSolidLarge(
-            onClick = {},
+            onClick = navigateToHome,
             text = "회원가입 완료",
+            enabled = state.age && state.service && state.privacy,
             modifier = Modifier
                 .fillMaxWidth()
                 .clip(MoodRadius.Radius12.shape),
