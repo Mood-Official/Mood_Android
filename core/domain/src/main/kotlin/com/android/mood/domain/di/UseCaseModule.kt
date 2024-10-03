@@ -2,6 +2,8 @@ package com.android.mood.domain.di
 
 import com.android.mood.domain.usecase.SampleUseCase
 import com.android.mood.domain.usecase.SampleUseCaseImpl
+import com.android.mood.domain.usecase.user.CheckDuplicatedEmailUseCase
+import com.android.mood.domain.usecase.user.CheckDuplicatedEmailUseCaseImpl
 import com.android.mood.domain.usecase.validation.ValidateEmailUseCase
 import com.android.mood.domain.usecase.validation.ValidateEmailUseCaseImpl
 import com.android.mood.domain.usecase.validation.ValidateNameUseCase
@@ -38,4 +40,8 @@ internal abstract class UseCaseModule {
     @Binds
     @ViewModelScoped
     abstract fun bindValidatePasswordUseCase(impl: ValidatePasswordUseCaseImpl): ValidatePasswordUseCase
+
+    @Binds
+    @ViewModelScoped
+    abstract fun bindCheckDuplicatedEmailUseCase(impl: CheckDuplicatedEmailUseCaseImpl): CheckDuplicatedEmailUseCase
 }

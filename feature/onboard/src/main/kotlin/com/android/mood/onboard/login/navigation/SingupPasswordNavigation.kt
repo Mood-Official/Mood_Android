@@ -7,7 +7,7 @@ import com.android.mood.onboard.login.screen.signuppassword.SignupPasswordRoute
 
 const val SIGNUP_PASSWORD_ROUTE = "signup_password"
 
-fun NavController.navigateToPassword() = navigate(SIGNUP_PASSWORD_ROUTE)
+fun NavController.navigateToSignupPassword() = navigate(SIGNUP_PASSWORD_ROUTE)
 
 fun NavGraphBuilder.signupPasswordScreen(
     navigateToNickname: () -> Unit,

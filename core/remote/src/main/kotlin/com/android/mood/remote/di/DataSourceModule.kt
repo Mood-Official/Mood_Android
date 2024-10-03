@@ -1,7 +1,7 @@
 package com.android.mood.remote.di
 
 import com.android.mood.remote.datasource.SampleDataSource
-import com.android.mood.remote.datasource.UserDataSource
+import com.android.mood.remote.datasource.UserRemoteDataSource
 import com.android.mood.remote.datasource.impl.SampleDataSourceImpl
 import com.android.mood.remote.datasource.impl.UserDataSourceImpl
 import dagger.Binds
@@ -20,5 +20,5 @@ internal interface DataSourceModule {
 
     @Binds
     @Singleton
-    fun bindUserDataSource(impl: UserDataSourceImpl): UserDataSource
+    fun bindUserDataSource(impl: UserDataSourceImpl): UserRemoteDataSource
 }

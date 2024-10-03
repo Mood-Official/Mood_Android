@@ -7,11 +7,13 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.android.mood.onboard.login.navigation.LOGIN_ROUTE
+import com.android.mood.onboard.login.navigation.loginPasswordScreen
 import com.android.mood.onboard.login.navigation.loginScreen
 import com.android.mood.onboard.login.navigation.navigateToAgree
+import com.android.mood.onboard.login.navigation.navigateToLoginPassword
 import com.android.mood.onboard.login.navigation.navigateToNickname
-import com.android.mood.onboard.login.navigation.navigateToPassword
 import com.android.mood.onboard.login.navigation.navigateToPhone
+import com.android.mood.onboard.login.navigation.navigateToSignupPassword
 import com.android.mood.onboard.login.navigation.signupAgreeScreen
 import com.android.mood.onboard.login.navigation.signupNicknameScreen
 import com.android.mood.onboard.login.navigation.signupPasswordScreen
@@ -31,7 +33,14 @@ fun OnboardNavHost(
         enterTransition = { EnterTransition.None },
         exitTransition = { ExitTransition.None }
     ) {
-        loginScreen(navigateToPassword = { navController.navigateToPassword() })
+        loginScreen(
+            navigateToSignupPassword = { navController.navigateToSignupPassword() },
+            navigateToLoginPassword = { navController.navigateToLoginPassword() }
+        )
+        loginPasswordScreen(
+            navigateToHome = navigateToHome,
+            navigateBack = { navController.popBackStack() }
+        )
         signupPasswordScreen(
             navigateToNickname = { navController.navigateToNickname() },
             navigateBack = { navController.popBackStack() }
