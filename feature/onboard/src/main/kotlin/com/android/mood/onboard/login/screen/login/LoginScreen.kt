@@ -1,6 +1,8 @@
 package com.android.mood.onboard.login.screen.login
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -9,11 +11,13 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.android.mood.designsystem.component.button.BtnSolidLarge
@@ -25,6 +29,7 @@ import com.android.mood.designsystem.component.textinput.TextInput
 import com.android.mood.designsystem.foundation.MoodRadius
 import com.android.mood.designsystem.foundation.MoodTheme
 import com.android.mood.onboard.login.screen.login.state.LoginUiState
+import com.android.mood.core.designsystem.R
 
 @Composable
 fun LoginScreen(
@@ -81,6 +86,32 @@ private fun LoginScreenImpl(
                 .clip(MoodRadius.Radius12.shape),
             enabled = state.isSuccess ?: false
         )
+
+        VerticalSpacer(height = 36.dp)
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.ic_kakao),
+                contentDescription = "KakaoTalk",
+                modifier = Modifier
+                    .size(56.dp)
+                    .clip(shape = androidx.compose.foundation.shape.CircleShape)
+                    .clickable { /* 카카오톡 클릭 시 행동 */ }
+            )
+
+            Image(
+                painter = painterResource(id = R.drawable.ic_naver),
+                contentDescription = "Naver",
+                modifier = Modifier
+                    .size(56.dp)
+                    .clip(shape = androidx.compose.foundation.shape.CircleShape)
+                    .clickable { /* 네이버 클릭 시 행동 */ }
+            )
+        }
+
         VerticalSpacer(height = 36.dp)
         Row(
             modifier = Modifier.fillMaxWidth(),
