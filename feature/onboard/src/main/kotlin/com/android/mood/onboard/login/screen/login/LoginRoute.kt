@@ -11,13 +11,15 @@ import kotlinx.coroutines.flow.collectLatest
 
 @Composable
 internal fun LoginRoute(
-    navigateToPassword: () -> Unit,
+    navigateToSignupPassword: () -> Unit,
+    navigateToLoginPassword: () -> Unit,
     viewModel: LoginViewModel = hiltViewModel()
 ) {
     LaunchedEffect(viewModel) {
         viewModel.sideEffect.collectLatest { sideEffect ->
             when (sideEffect) {
-                LoginSideEffect.NavigateToPassword -> navigateToPassword()
+                LoginSideEffect.NavigateToSignupPassword -> navigateToSignupPassword()
+                LoginSideEffect.NavigateToLoginPassword -> navigateToLoginPassword()
             }
         }
     }
@@ -27,6 +29,6 @@ internal fun LoginRoute(
     LoginScreen(
         state = state,
         validateEmail = { viewModel.intent(LoginIntent.ValidateEmail(it)) },
-        navigateToPassword = { viewModel.intent(LoginIntent.ClickEmailButton) }
+        navigateToPassword = { viewModel.intent(LoginIntent.ClickEmailButton(it)) }
     )
 }

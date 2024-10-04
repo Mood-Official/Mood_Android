@@ -35,7 +35,7 @@ import com.android.mood.core.designsystem.R
 fun LoginScreen(
     state: LoginUiState,
     validateEmail: (String) -> Unit,
-    navigateToPassword: () -> Unit,
+    navigateToPassword: (String) -> Unit,
 ) {
     LoginScreenImpl(
         state = state,
@@ -49,7 +49,7 @@ fun LoginScreen(
 private fun LoginScreenImpl(
     state: LoginUiState = LoginUiState.INITIAL_STATE,
     validateEmail: (String) -> Unit = {},
-    navigateToPassword: () -> Unit = {},
+    navigateToPassword: (String) -> Unit = {},
 ) {
     Column(
         modifier = Modifier
@@ -79,7 +79,7 @@ private fun LoginScreenImpl(
         )
         VerticalSpacer(height = 12.dp)
         BtnSolidLarge(
-            onClick = navigateToPassword,
+            onClick = { navigateToPassword(state.email) },
             text = "이메일로 계속하기",
             modifier = Modifier
                 .fillMaxWidth()
