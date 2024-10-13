@@ -128,6 +128,8 @@ activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "constraintlayout" }
 snapper = { group = "dev.chrisbanes.snapper", name = "snapper", version.ref = "snapper" }
 
+kakao-sdk = { module = "com.kakao.sdk:v2-user", version = "2.11.0" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }

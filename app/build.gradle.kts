@@ -74,4 +74,7 @@ dependencies {
     kapt(libs.hilt.compiler)
 
     implementation(libs.timber)
+
+    implementation(libs.kakao.sdk)
 }
+
