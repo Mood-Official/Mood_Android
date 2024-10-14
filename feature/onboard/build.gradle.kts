@@ -40,4 +40,6 @@ dependencies {
     implementation(libs.timber)
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
+
+    implementation(libs.kakao.sdk)
 }

@@ -1,5 +1,6 @@
 package com.android.mood.onboard.login.screen.login
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -17,6 +18,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -30,6 +32,7 @@ import com.android.mood.designsystem.foundation.MoodRadius
 import com.android.mood.designsystem.foundation.MoodTheme
 import com.android.mood.onboard.login.screen.login.state.LoginUiState
 import com.android.mood.core.designsystem.R
+import com.kakao.sdk.user.UserApiClient
 
 @Composable
 fun LoginScreen(
@@ -51,6 +54,7 @@ private fun LoginScreenImpl(
     validateEmail: (String) -> Unit = {},
     navigateToPassword: (String) -> Unit = {},
 ) {
+    val context = LocalContext.current  // Context 가져오기
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -99,7 +103,17 @@ private fun LoginScreenImpl(
                 modifier = Modifier
                     .size(56.dp)
                     .clip(shape = androidx.compose.foundation.shape.CircleShape)
-                    .clickable { /* 카카오톡 클릭 시 행동 */ }
+                    .clickable {
+                        UserApiClient.instance.loginWithKakaoTalk(context) { token, error ->
+                            if (error != null) {
+                                // 로그인 실패 처리
+                                Log.e("KakaoLogin", "로그인 실패", error)
+                            } else if (token != null) {
+                                // 로그인 성공 처리
+                                Log.i("KakaoLogin", "로그인 성공, 토큰: ${token.accessToken}")
+                            }
+                        }
+                    }
             )
 
             Image(
